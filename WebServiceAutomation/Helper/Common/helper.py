@@ -3,9 +3,17 @@ import string
 import random
 
 
+def get_api_service(params):
+    # set the api-endpoint
+    api_end_point = "https://restcountries.eu/rest/v2"
+
+    # set the return api with params
+    return api_end_point + params
+
+
 def get_all_countries_response():
-    # all countries api-endpoint
-    all_countries_url = "https://restcountries.eu/rest/v2/all"
+    # all countries api
+    all_countries_url = get_api_service("/all")
 
     # sending get request and saving the response as response object
     all_countries_response = requests.get(url=all_countries_url)
@@ -17,8 +25,8 @@ def get_specific_country_response(country_code):
     # capture country code and convert in lower case
     get_country_code = country_code.lower()
 
-    # specific country api-endpoint
-    specific_country_url = "https://restcountries.eu/rest/v2/alpha/" + get_country_code
+    # specific country api
+    specific_country_url = get_api_service("/alpha/" + get_country_code)
 
     # sending get request and saving the response as response object
     specific_country_response = requests.get(url=specific_country_url)
