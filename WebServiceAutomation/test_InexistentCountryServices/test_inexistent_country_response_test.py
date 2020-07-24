@@ -4,7 +4,7 @@ from Helper.Common.helper import get_diff_country_code_from_all_countries
 
 
 def test_inexistent_country_response():
-    # get inexisten country api-endpoint
+    # get inexistent country api-endpoint
     inexistent_country = get_specific_country_response(get_diff_country_code_from_all_countries(2))
 
     # get status code

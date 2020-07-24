@@ -2,11 +2,12 @@
 import requests
 from Helper.Common.helper import generate_random_country_name
 from Helper.Common.helper import generate_random_country_code
+from Helper.Common.helper import get_api_service
 
 
 def test_create_new_country_post():
-    # all countries api-endpoint
-    all_countries_url = "https://restcountries.eu/rest/v2/all"
+    # all countries api
+    all_countries_url = get_api_service("/all")
 
     # get random country name
     get_random_country_name = generate_random_country_name()
